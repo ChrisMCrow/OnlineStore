@@ -2,7 +2,7 @@
 
 <div *ngFor="let album of albums | async" class="card card-default">
   <div class="card-body">
-    <h3><em>{{album.title}}</em> by {{album.artist}}</h3>
+    <h3 (click)="goToDetailPage(album)" class="text-primary"><em>{{album.title}}</em> by {{album.artist}}</h3>
     <div *ngIf="currentRoute === '/admin'">
       {{album.description}}
       <hr>
